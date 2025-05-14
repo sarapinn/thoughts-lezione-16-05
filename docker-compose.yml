@@ -1,0 +1,19 @@
+version: "3"
+services:
+  microservizio:
+    build: .
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    environment:
+      DATABASE_URL: postgresql://admin:adminpass@db/thoughtsdb
+
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_DB: thoughtsdb
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: adminpass
+
+

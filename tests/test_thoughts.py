@@ -60,5 +60,3 @@ def test_get_thought_by_id(client):
     assert response.status_code == 200
     assert response.json["username"] == "anna"
 
-def test_fallimento():
-    assert False, "Test fallito"
